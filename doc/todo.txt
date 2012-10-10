@@ -1,4 +1,8 @@
 To Do
 
++ change CSS
+
+Done
+
 + use a regular expression to remove characters not pertinent to word frequency count.
 + clear button 
