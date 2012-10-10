@@ -1,10 +1,12 @@
 #import('dart:html');
 
 List fromTextToWords(String text) {
+  /*
   var textWithout = text.replaceAll(',', '').replaceAll(';', '').
-      replaceAll('.', '').replaceAll('?', '').replaceAll('!', '').
-      replaceAll('(', '').replaceAll(')', '').replaceAll('\$', '').
-      replaceAll('"', '').replaceAll("'", '').replaceAll('\n', ' ');
+      replaceAll('.', '').replaceAll('\n', ' ');
+  */
+  RegExp regexp = const RegExp("[,;:.?!()'`’“\"\n]");
+  var textWithout = text.replaceAll(regexp, '');
   return textWithout.split(' ');
 }
 
@@ -35,6 +37,7 @@ void main() {
   TextAreaElement textArea = document.query('#text');
   TextAreaElement wordsArea = document.query('#words');
   ButtonElement wordsButton = document.query('#frequency');
+  ButtonElement clearButton = document.query('#clear');
   wordsButton.on.click.add((MouseEvent e) {
     wordsArea.value = 'Word: frequency \n';
     var text = textArea.value.trim();
@@ -45,6 +48,10 @@ void main() {
       sortedWordsList.forEach((word) =>
           wordsArea.value = '${wordsArea.value} \n${word}');
     }
+  });
+  clearButton.on.click.add((MouseEvent e) {
+    textArea.value = '';
+    wordsArea.value = '';
   });
 }
 
