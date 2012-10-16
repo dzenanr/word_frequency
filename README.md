@@ -3,7 +3,9 @@
 
 # Word Frequency
 
-To show an example of using a map (Map) in Dart.
+Categories: education, map, regular expression.
+
+Description: Simple web application with a map word counts in a text.
 
 
 
