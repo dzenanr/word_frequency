@@ -5,7 +5,7 @@ List fromTextToWords(String text) {
   var textWithout = text.replaceAll(',', '').replaceAll(';', '').
       replaceAll('.', '').replaceAll('\n', ' ');
   */
-  RegExp regexp = const RegExp("[,;:.?!()'`’“\"\n]");
+  RegExp regexp = new RegExp("[,;:.?!()'`’“\"\n]");
   var textWithout = text.replaceAll(regexp, '');
   return textWithout.split(' ');
 }
