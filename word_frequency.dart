@@ -28,7 +28,7 @@ List sortWords(Map wordFrequencyMap) {
   var wordWordFrequencyMap = new Map<String, String>();
   wordFrequencyMap.forEach((k, v) =>
       wordWordFrequencyMap[k] = '${k}: ${v.toString()}');
-  List sortedWordList = wordWordFrequencyMap.values;
+  List sortedWordList = wordWordFrequencyMap.values.toList();
   sortedWordList.sort((m,n) => m.compareTo(n));
   return sortedWordList;
 }
