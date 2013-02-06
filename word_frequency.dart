@@ -38,7 +38,7 @@ void main() {
   TextAreaElement wordsArea = document.query('#words');
   ButtonElement wordsButton = document.query('#frequency');
   ButtonElement clearButton = document.query('#clear');
-  wordsButton.on.click.add((MouseEvent e) {
+  wordsButton.onClick.listen((MouseEvent e) {
     wordsArea.value = 'Word: frequency \n';
     var text = textArea.value.trim();
     if (text != '') {
@@ -49,7 +49,7 @@ void main() {
           wordsArea.value = '${wordsArea.value} \n${word}');
     }
   });
-  clearButton.on.click.add((MouseEvent e) {
+  clearButton.onClick.listen((MouseEvent e) {
     textArea.value = '';
     wordsArea.value = '';
   });
