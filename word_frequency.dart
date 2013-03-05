@@ -5,7 +5,11 @@ List fromTextToWords(String text) {
   var textWithout = text.replaceAll(',', '').replaceAll(';', '').
       replaceAll('.', '').replaceAll('\n', ' ');
   */
-  RegExp regexp = new RegExp("[,;:.?!()'`’“\"\n]");
+  var regexp = new RegExp("[,;:.?!()'`’“\"\n]");
+  // http://www.regular-expressions.info/reference.html
+  // \w : word characters (letters, digits, and underscores)
+  // \W : negation of \w
+  //var regexp = new RegExp('\W+');
   var textWithout = text.replaceAll(regexp, '');
   return textWithout.split(' ');
 }
