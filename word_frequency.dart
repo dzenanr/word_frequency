@@ -43,10 +43,10 @@ List sortWords(Map wordFrequencyMap) {
 }
 
 void main() {
-  TextAreaElement textArea = document.query('#text');
-  TextAreaElement wordsArea = document.query('#words');
-  ButtonElement wordsButton = document.query('#frequency');
-  ButtonElement clearButton = document.query('#clear');
+  TextAreaElement textArea = document.querySelector('#text');
+  TextAreaElement wordsArea = document.querySelector('#words');
+  ButtonElement wordsButton = document.querySelector('#frequency');
+  ButtonElement clearButton = document.querySelector('#clear');
   wordsButton.onClick.listen((MouseEvent e) {
     wordsArea.value = 'Word: frequency \n';
     var text = textArea.value.trim();
