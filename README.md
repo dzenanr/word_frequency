@@ -4,7 +4,7 @@
 
 ###Description
 
-Simple web application with a map word counts in a text.
+Simple web application with a map of word counts in a text.
 
 
 
